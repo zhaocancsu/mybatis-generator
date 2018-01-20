@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- ~ The MIT License (MIT) ~ ~ Copyright (c) 2014 abel533@gmail.com ~ ~ 
+	Permission is hereby granted, free of charge, to any person obtaining a copy 
+	~ of this software and associated documentation files (the "Software"), to 
+	deal ~ in the Software without restriction, including without limitation 
+	the rights ~ to use, copy, modify, merge, publish, distribute, sublicense, 
+	and/or sell ~ copies of the Software, and to permit persons to whom the Software 
+	is ~ furnished to do so, subject to the following conditions: ~ ~ The above 
+	copyright notice and this permission notice shall be included in ~ all copies 
+	or substantial portions of the Software. ~ ~ THE SOFTWARE IS PROVIDED "AS 
+	IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR ~ IMPLIED, INCLUDING BUT NOT 
+	LIMITED TO THE WARRANTIES OF MERCHANTABILITY, ~ FITNESS FOR A PARTICULAR 
+	PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE ~ AUTHORS OR COPYRIGHT 
+	HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER ~ LIABILITY, WHETHER IN 
+	AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, ~ OUT OF OR IN CONNECTION 
+	WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN ~ THE SOFTWARE. -->
+
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+	<classPathEntry
+			location="D:\mysql-connector-java-5.1.44.jar" />
+
+	<context id="MySqlTables" targetRuntime="MyBatis3Simple"
+		defaultModelType="flat">
+		<property name="javaFileEncoding" value="UTF-8"/>
+		<property name="beginningDelimiter" value="`" />
+		<property name="endingDelimiter" value="`" />
+
+		<plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+			<property name="mappers"
+				value="tk.mybatis.mapper.common.Mapper" />
+			<property name="caseSensitive" value="true" />
+		</plugin>
+
+		<jdbcConnection driverClass="com.mysql.jdbc.Driver"
+			connectionURL="jdbc:mysql://172.18.111.8:3306/bigdata_platform" userId="service"
+			password="Emc20090">
+		</jdbcConnection>
+		<javaTypeResolver>
+			<property name="forceBigDecimals" value="false" />
+		</javaTypeResolver>
+
+		<javaModelGenerator targetPackage="cn.migu.macaw.schedule.api.model"
+			targetProject="src">
+			<property name="enableSubPackages" value="true" />
+			<property name="trimStrings" value="true" />
+		</javaModelGenerator>
+		<!-- 生成的SQL映射文件包名和位置，这里配置将生成的SQL映射文件放在cn.migu.webapps这个包下 -->
+		<sqlMapGenerator targetPackage="cn.migu.macaw.schedule.dao.mappper"
+			targetProject="src">
+			<property name="enableSubPackages" value="true" />
+		</sqlMapGenerator>
+		<!-- 生成DAO的包名和位置，这里配置将生成的dao类放在cn.migu.webapps.dao这个包下 -->
+		<javaClientGenerator type="XMLMAPPER"
+			targetPackage="cn.migu.macaw.schedule.dao" targetProject="src">
+			<property name="enableSubPackages" value="true" />
+		</javaClientGenerator>
+
+		<table tableName="JOB">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="JOB_LOG">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="JOB_NODE">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="JOB_PARAM">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="NODE_LOG">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="NODE_PARAM">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="NODE_RULE">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="PROCEDURE">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="PROC_LOG">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="PROC_SQL">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="PROC_VARIABLE">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="PROC_VARIABLE_MAP">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="TASK">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="TASK_PARAM">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="TASK_TEMPLATE">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+		<table tableName="DATA_SOURCE_CONFIG">
+			<!-- <generatedKey column="obj_id" sqlStatement="JDBC" />-->
+		</table>
+
+
+
+	</context>
+</generatorConfiguration>
